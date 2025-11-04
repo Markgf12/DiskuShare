@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register | Mulan Theme</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2 class="auth-title">Masuk ke Akunmu</h2>
+      <form class="auth-form">
+        <label>Email</label>
+        <input type="email" placeholder="nama@email.com" required>
+        
+        <label>Kata Sandi</label>
+        <input type="password" placeholder="••••••••" required>
+        
+        <button type="submit" class="btn primary">Masuk</button>
+        <p class="switch">Belum punya akun? <a href="#" id="to-register">Daftar di sini</a></p>
+      </form>
+    </div>
+
+    <div class="auth-card hidden" id="register-card">
+      <h2 class="auth-title">Buat Akun Baru</h2>
+      <form class="auth-form">
+        <label>Nama Lengkap</label>
+        <input type="text" placeholder="Nama Kamu" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="nama@email.com" required>
+        
+        <label>Kata Sandi</label>
+        <input type="password" placeholder="••••••••" required>
+        
+        <button type="submit" class="btn primary">Daftar</button>
+        <p class="switch">Sudah punya akun? <a href="#" id="to-login">Masuk di sini</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const loginCard = document.querySelector('.auth-card');
+    const registerCard = document.getElementById('register-card');
+    document.getElementById('to-register').onclick = () => {
+      loginCard.classList.add('hidden');
+      registerCard.classList.remove('hidden');
+    };
+    document.getElementById('to-login').onclick = () => {
+      registerCard.classList.add('hidden');
+      loginCard.classList.remove('hidden');
+    };
+  </script>
+</body>
+</html>
