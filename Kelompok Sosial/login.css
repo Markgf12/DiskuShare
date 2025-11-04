@@ -1,0 +1,116 @@
+:root {
+  --bg: #F5F2E7;
+  --panel: #FDF8F2;
+  --ink: #1C1C1C;
+  --accent: #A0181A;
+  --gold: #E0B04E;
+  --muted: #6d6a66;
+  --card-radius: 14px;
+  --shadow: 0 8px 28px rgba(16,16,16,0.1);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.auth-card {
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  border-radius: var(--card-radius);
+  padding: 40px 36px;
+  width: 360px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+.auth-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.auth-form label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #fff, #fffefb);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.btn.primary {
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), #8b181a);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(160,24,26,0.2);
+}
+
+.switch {
+  font-size: 14px;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.switch a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Sentuhan "mahal" */
+.auth-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--card-radius);
+  background: linear-gradient(145deg, rgba(224,176,78,0.06), transparent);
+  pointer-events: none;
+}
